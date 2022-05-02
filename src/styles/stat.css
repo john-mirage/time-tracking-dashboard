@@ -1,7 +1,7 @@
 .stat {
     width: 100%;
     height: auto;
-    border-radius: 1.6rem;
+    border-radius: 1.4rem;
     padding-top: 3.8rem;
     background-position: top -1rem right 1.6rem, center;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@
     width: 100%;
     height: auto;
     padding: 2.4rem;
-    border-radius: 1.6rem;
+    border-radius: 1.4rem;
     background-color: var(--color-dark-blue);
     cursor: pointer;
 }
@@ -133,6 +133,14 @@
 }
 
 @media screen and (min-width: 1158px) {
+    .stat {
+        padding-top: 4.5rem;
+    }
+
+    .stat__content {
+        padding: 2.8rem;
+    }
+
     .stat__row--top {
         margin-bottom: 2.4rem;
     }
