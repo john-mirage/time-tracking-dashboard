@@ -6,6 +6,10 @@
 }
 
 .menu__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     height: auto;
     border-radius: 1.6rem;
@@ -86,9 +90,7 @@
 
 @media screen and (min-width: 375px) {
     .menu__user {
-        display: flex;
         flex-direction: row;
-        justify-content: flex-start;
         align-items: center;
     }
 
@@ -122,6 +124,28 @@
     .menu {
         grid-column: span 1 / span 1;
         grid-row: span 3 / span 3;
+    }
+
+    .menu__user {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu__period {
+        flex-direction: column;
+        margin-top: 1.6rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .menu__button {
+        flex: 0 0 4.8rem;
+        height: 4.8rem;
+    }
+
+    .menu__label {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 2.8rem;
     }
 }
 
