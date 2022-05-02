@@ -19,6 +19,7 @@
     "paths": {
       "@images/*": ["src/images/*"],
       "@styles/*": ["src/styles/*"],
+      "@data/*": ["src/data/*"],
     }
   },
   "include": ["src"]

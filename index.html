@@ -29,8 +29,48 @@
     <meta property="twitter:image" content="https://john-mirage.github.io/time-tracking-dashboard/preview.jpg">
 </head>
 
-<body>
+<body class="page">
 
+    <main class="page__grid">
+
+        <header class="menu">
+            <div class="menu__user">
+                <img class="menu__avatar" src="/src/images/image-jeremy.png" alt="avatar picture">
+                <div class="menu__info">
+                    <p class="menu__report">Report for</p>
+                    <h1 class="menu__name">Jeremy Robson</h1>
+                </div>
+            </div>
+            <div class="menu__period">
+                <button class="menu__button">Daily</button>
+                <button class="menu__button">Weekly</button>
+                <button class="menu__button">Monthly</button>
+            </div>
+        </header>
+
+        <template id="stat">
+            <section class="stat">
+                <div class="stat__image"></div>
+                <div class="stat__info">
+                    <div class="stat__row">
+                        <h2 class="stat__title"></h2>
+                        <button class="stat__more-button"></button>
+                    </div>
+                    <div class="stat__row">
+                        <p class="stat__current">
+                            <span class="stat__current-value"></span>
+                            <span class="stat__current-time-unit">hrs</span>
+                        </p>
+                        <p class="stat__previous">
+                            <span class="stat__previous-period"></span>
+                            <span class="stat__previous-value"></span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+    </main>
 
     <script type="module" src="/src/main.ts"></script>
 </body>
