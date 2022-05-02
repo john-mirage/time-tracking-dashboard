@@ -1,10 +1,3 @@
-import workIcon from "@images/icon-work.svg";
-import playIcon from "@images/icon-play.svg";
-import studyIcon from "@images/icon-study.svg";
-import exerciseIcon from "@images/icon-exercise.svg";
-import socialIcon from "@images/icon-social.svg";
-import selfCareIcon from "@images/icon-self-care.svg";
-
 interface Period {
   name: string;
   current: number;
@@ -16,7 +9,6 @@ interface Stat {
   daily: Period;
   weekly: Period;
   monthly: Period;
-  image: string;
 }
 
 const stats: Stat[] = [
@@ -37,7 +29,6 @@ const stats: Stat[] = [
       current: 120,
       previous: 125,
     },
-    image: workIcon,
   },
   {
     name: "play",
@@ -56,7 +47,6 @@ const stats: Stat[] = [
       current: 30,
       previous: 42,
     },
-    image: playIcon,
   },
   {
     name: "study",
@@ -75,7 +65,6 @@ const stats: Stat[] = [
       current: 12,
       previous: 16,
     },
-    image: studyIcon,
   },
   {
     name: "exercise",
@@ -94,7 +83,6 @@ const stats: Stat[] = [
       current: 16,
       previous: 20,
     },
-    image: exerciseIcon,
   },
   {
     name: "social",
@@ -113,7 +101,6 @@ const stats: Stat[] = [
       current: 20,
       previous: 21,
     },
-    image: socialIcon,
   },
   {
     name: "self care",
@@ -132,7 +119,6 @@ const stats: Stat[] = [
       current: 8,
       previous: 9,
     },
-    image: selfCareIcon,
   },
 ];
 

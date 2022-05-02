@@ -50,3 +50,54 @@
     border-radius: 1.6rem;
     background-color: var(--color-dark-blue);
 }
+
+.stat__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.8rem;
+}
+
+.stat__row:last-child {
+    margin-bottom: 0;
+}
+
+.stat__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.stat__button {
+    display: flex;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.stat__icon {
+    width: 2rem;
+    height: auto;
+    color: var(--color-white);
+    margin: auto;
+}
+
+.stat__current {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.stat__previous {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-pale-blue);
+    margin: 0;
+}
