@@ -7,8 +7,9 @@ const template = document.querySelector("#template") as HTMLTemplateElement;
 
 inputs.forEach((input) => {
   input.addEventListener("change", (event) => {
+    const target = event.target as HTMLInputElement;
     document.dispatchEvent(new CustomEvent("change-period", {
-      detail: event.target.value,
+      detail: target.value,
     }));
   });
 });
@@ -22,12 +23,12 @@ stats.forEach((stat) => {
   const previousPeriod = statFragment.querySelector(".stat__previous-period") as HTMLSpanElement;
   section.classList.add(`stat--${stat.name.replace(" ", "-")}`);
   title.textContent = stat.name;
-  currentValue.textContent = String(stat.weekly.current);
-  previousValue.textContent = String(stat.weekly.previous);
+  currentValue.textContent = `${String(stat.weekly.current)}${stat.weekly.current > 1 ? "hrs" : "hr"}`;
+  previousValue.textContent = `${String(stat.weekly.previous)}${stat.weekly.previous > 1 ? "hrs" : "hr"}`;
   previousPeriod.textContent = stat.weekly.name;
   document.addEventListener("change-period", (event: CustomEvent) => {
-   currentValue.textContent = String(stat[event.detail].current);
-   previousValue.textContent = String(stat[event.detail].previous);
+   currentValue.textContent = `${String(stat[event.detail].current)}${stat[event.detail].current > 1 ? "hrs" : "hr"}`;
+   previousValue.textContent = `${String(stat[event.detail].previous)}${stat[event.detail].previous > 1 ? "hrs" : "hr"}`;
    previousPeriod.textContent = stat[event.detail].name;
   });
   grid.appendChild(document.createComment(stat.name));
