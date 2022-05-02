@@ -31,7 +31,7 @@
 
 <body class="page">
 
-    <main class="page__grid">
+    <main class="page__grid" id="grid">
 
         <header class="menu">
             <div class="menu__user">
@@ -42,13 +42,22 @@
                 </div>
             </div>
             <div class="menu__period">
-                <button class="menu__button">Daily</button>
-                <button class="menu__button">Weekly</button>
-                <button class="menu__button">Monthly</button>
+                <div class="menu__button">
+                    <input class="menu__input" type="radio" name="period-selector" id="daily-selector" />
+                    <label class="menu__label" for="daily-selector">Daily</label>
+                </div>
+                <div class="menu__button">
+                    <input class="menu__input" type="radio" name="period-selector" id="weekly-selector" />
+                    <label class="menu__button" for="weekly-selector">Weekly</label>
+                </div>
+                <div class="menu__button">
+                    <input class="menu__input" type="radio" name="period-selector" id="monthly-selector" />
+                    <label class="menu__button" for="monthly-selector">Monthly</label>
+                </div>
             </div>
         </header>
 
-        <template id="stat">
+        <template id="stat-template">
             <section class="stat">
                 <div class="stat__image"></div>
                 <div class="stat__info">
