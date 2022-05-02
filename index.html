@@ -30,57 +30,63 @@
 </head>
 
 <body class="page">
+    <main class="page__container">
+        <div class="page__grid" id="grid">
 
-    <main class="page__grid" id="grid">
-
-        <header class="menu">
-            <div class="menu__user">
-                <img class="menu__avatar" src="/src/images/image-jeremy.png" alt="avatar picture">
-                <div class="menu__info">
-                    <p class="menu__report">Report for</p>
-                    <h1 class="menu__name">Jeremy Robson</h1>
-                </div>
-            </div>
-            <div class="menu__period">
-                <div class="menu__button">
-                    <input class="menu__input" type="radio" name="period-selector" id="daily-selector" />
-                    <label class="menu__label" for="daily-selector">Daily</label>
-                </div>
-                <div class="menu__button">
-                    <input class="menu__input" type="radio" name="period-selector" id="weekly-selector" />
-                    <label class="menu__button" for="weekly-selector">Weekly</label>
-                </div>
-                <div class="menu__button">
-                    <input class="menu__input" type="radio" name="period-selector" id="monthly-selector" />
-                    <label class="menu__button" for="monthly-selector">Monthly</label>
-                </div>
-            </div>
-        </header>
-
-        <template id="stat-template">
-            <section class="stat">
-                <div class="stat__image"></div>
-                <div class="stat__info">
-                    <div class="stat__row">
-                        <h2 class="stat__title"></h2>
-                        <button class="stat__more-button"></button>
-                    </div>
-                    <div class="stat__row">
-                        <p class="stat__current">
-                            <span class="stat__current-value"></span>
-                            <span class="stat__current-time-unit">hrs</span>
-                        </p>
-                        <p class="stat__previous">
-                            <span class="stat__previous-period"></span>
-                            <span class="stat__previous-value"></span>
-                        </p>
+            <header class="menu">
+                <div class="menu__user">
+                    <img class="menu__avatar" src="/src/images/image-jeremy.png" alt="avatar picture">
+                    <div class="menu__info">
+                        <p class="menu__report">Report for</p>
+                        <h1 class="menu__name">Jeremy Robson</h1>
                     </div>
                 </div>
-            </section>
-        </template>
+                <div class="menu__period">
+                    <div class="menu__button">
+                        <input class="menu__input" type="radio" value="daily" name="period-selector" id="daily-selector" />
+                        <label class="menu__label" for="daily-selector">Daily</label>
+                    </div>
+                    <div class="menu__button">
+                        <input class="menu__input" type="radio" value="weekly" name="period-selector" id="weekly-selector" checked />
+                        <label class="menu__button" for="weekly-selector">Weekly</label>
+                    </div>
+                    <div class="menu__button">
+                        <input class="menu__input" type="radio" value="monthly" name="period-selector" id="monthly-selector" />
+                        <label class="menu__button" for="monthly-selector">Monthly</label>
+                    </div>
+                </div>
+            </header>
 
+            <template id="template">
+                <section class="stat">
+                    <div class="stat__background"></div>
+                    <div class="stat__info">
+                        <div class="stat__row">
+                            <h2 class="stat__title"></h2>
+                            <button class="stat__button">
+                                <svg class="stat__icon" viewBox="0 0 21 5" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="stat__row">
+                            <p class="stat__current">
+                                <span class="stat__current-value"></span>
+                                <span class="stat__current-time-unit">hrs</span>
+                            </p>
+                            <p class="stat__previous">
+                                Last
+                                <span class="stat__previous-period"></span>
+                                <span class="stat__previous-value"></span>
+                                hrs
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </template>
+
+        </div>
     </main>
-
     <script type="module" src="/src/main.ts"></script>
 </body>
 
