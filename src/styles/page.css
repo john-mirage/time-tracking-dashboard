@@ -1,4 +1,5 @@
 .page {
+    display: flex;
     width: 100%;
     min-height: 100vh;
     background-color: var(--color-very-dark-blue);
@@ -7,6 +8,7 @@
 .page__container {
     width: 100%;
     height: auto;
+    margin: auto;
     padding: 8rem 2.4rem;
 }
 
@@ -18,11 +20,9 @@
     height: auto;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 375px) {
     .page__container {
-        max-width: 576px;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 375px;
     }
 }
 
@@ -46,7 +46,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1158px) {
     .page__container {
         max-width: 1200px;
     }

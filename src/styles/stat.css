@@ -53,12 +53,21 @@
 
 .stat__row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     height: auto;
     margin-bottom: 0.8rem;
+}
+
+.stat__row--top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat__row--bottom {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .stat__row:last-child {
@@ -79,6 +88,7 @@
     border: none;
     background-color: transparent;
     padding: 0;
+    cursor: pointer;
 }
 
 .stat__icon {
@@ -92,7 +102,7 @@
     font-size: 3.2rem;
     font-weight: 300;
     color: var(--color-white);
-    margin: 0;
+    margin: 0 0 0.4rem 0;
 }
 
 .stat__previous {
@@ -100,4 +110,19 @@
     font-weight: 400;
     color: var(--color-pale-blue);
     margin: 0;
+}
+
+@media screen and (min-width: 375px) {
+    .stat__row--bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 992px) {
+    .stat__row--bottom {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }
