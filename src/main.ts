@@ -15,10 +15,12 @@ inputs.forEach((input) => {
 
 stats.forEach((stat) => {
   const statFragment = template.content.cloneNode(true) as HTMLElement;
+  const section = statFragment.querySelector(".stat") as HTMLElement;
   const title = statFragment.querySelector(".stat__title") as HTMLHeadingElement;
   const currentValue = statFragment.querySelector(".stat__current-value") as HTMLSpanElement;
   const previousValue = statFragment.querySelector(".stat__previous-value") as HTMLSpanElement;
   const previousPeriod = statFragment.querySelector(".stat__previous-period") as HTMLSpanElement;
+  section.classList.add(`stat--${stat.name.replace(" ", "-")}`);
   title.textContent = stat.name;
   currentValue.textContent = String(stat.weekly.current);
   previousValue.textContent = String(stat.weekly.previous);

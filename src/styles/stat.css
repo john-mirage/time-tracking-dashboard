@@ -1,0 +1,52 @@
+.stat {
+    width: 100%;
+    height: auto;
+    border-radius: 1.6rem;
+    padding-top: 3.8rem;
+    background-position: top -1rem right 1.6rem, center;
+    background-repeat: no-repeat;
+}
+
+.stat--work {
+    background-image:
+        url("/src/images/icon-work.svg"),
+        linear-gradient(to bottom, var(--color-work) 0% 50%, var(--color-dark-blue) 50% 100%);
+}
+
+.stat--play {
+    background-image:
+        url("/src/images/icon-play.svg"),
+        linear-gradient(to bottom, var(--color-play) 0% 50%, var(--color-dark-blue) 50% 100%);
+}
+
+.stat--study {
+    background-image:
+        url("/src/images/icon-study.svg"),
+        linear-gradient(to bottom, var(--color-study) 0% 50%, var(--color-dark-blue) 50% 100%);
+}
+
+.stat--exercise {
+    background-image:
+        url("/src/images/icon-exercise.svg"),
+        linear-gradient(to bottom, var(--color-exercise) 0% 50%, var(--color-dark-blue) 50% 100%);
+}
+
+.stat--social {
+    background-image:
+        url("/src/images/icon-social.svg"),
+        linear-gradient(to bottom, var(--color-social) 0% 50%, var(--color-dark-blue) 50% 100%);
+}
+
+.stat--self-care {
+    background-image:
+        url("/src/images/icon-self-care.svg"),
+        linear-gradient(to bottom, var(--color-self-care) 0% 50%, var(--color-dark-blue) 50% 100%);
+}
+
+.stat__content {
+    width: 100%;
+    height: auto;
+    padding: 2.4rem;
+    border-radius: 1.6rem;
+    background-color: var(--color-dark-blue);
+}
