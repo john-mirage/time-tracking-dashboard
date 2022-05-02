@@ -49,6 +49,11 @@
     padding: 2.4rem;
     border-radius: 1.6rem;
     background-color: var(--color-dark-blue);
+    cursor: pointer;
+}
+
+.stat__content:hover {
+    background-color: var(--color-desaturated-blue);
 }
 
 .stat__row {
@@ -90,8 +95,12 @@
 .stat__icon {
     width: 2rem;
     height: auto;
-    color: var(--color-white);
+    color: var(--color-pale-blue);
     margin: auto;
+}
+
+.stat__button:hover > .stat__icon {
+    color: var(--color-white);
 }
 
 .stat__current {

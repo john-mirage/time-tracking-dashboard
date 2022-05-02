@@ -88,6 +88,10 @@
     color: var(--color-white);
 }
 
+.menu__input:hover ~ .menu__label {
+    color: var(--color-white);
+}
+
 @media screen and (min-width: 375px) {
     .menu__user {
         flex-direction: row;
