@@ -9,6 +9,7 @@ interface Period {
 interface Stat {
   title: string;
   timeframes: {
+    [period: string]: Period;
     daily: Period;
     weekly: Period;
     monthly: Period;
@@ -16,8 +17,11 @@ interface Stat {
 }
 
 class AppDashboard extends HTMLElement {
+  activeButton: HTMLButtonElement | false;
+
   constructor() {
     super();
+    this.activeButton = false;
   }
 
   connectedCallback() {
@@ -26,10 +30,38 @@ class AppDashboard extends HTMLElement {
     stats.forEach((stat: Stat) => this.createStat(stat));
   }
 
+  setActiveButton(button: HTMLButtonElement) {
+    if (this.activeButton) this.disableButton(this.activeButton);
+    this.activeButton = button;
+    this.activateButton(this.activeButton);
+  }
+
+  activateButton(button: HTMLButtonElement) {
+    button.classList.add("menu__button--active");
+    button.setAttribute("disabled", "");
+  }
+
+  disableButton(button: HTMLButtonElement) {
+    button.classList.remove("menu__button--active");
+    button.removeAttribute("disabled");
+  }
+
   createMenu() {
     const template = <HTMLTemplateElement>document.getElementById("template-menu");
     const fragment = <DocumentFragment>template.content.cloneNode(true);
     const element = <HTMLElement>fragment.querySelector(".menu");
+    const buttons = <NodeListOf<HTMLButtonElement>>fragment.querySelectorAll(".menu__button");
+    this.setActiveButton(buttons[1]);
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        this.setActiveButton(button);
+        const customEvent = new CustomEvent("change-period", { detail: {
+            name: button.dataset.name,
+            periodName: button.dataset.period
+        }});
+        this.dispatchEvent(customEvent);
+      });
+    });
     this.appendChild(element);
   }
 
@@ -47,44 +79,16 @@ class AppDashboard extends HTMLElement {
     currentValue.textContent = `${String(stat.timeframes.weekly.current)}${stat.timeframes.weekly.current > 1 ? "hrs" : "hr"}`;
     previousValue.textContent = `${String(stat.timeframes.weekly.previous)}${stat.timeframes.weekly.previous > 1 ? "hrs" : "hr"}`;
     previousPeriod.textContent = "week";
+    this.addEventListener("change-period", (event) => {
+      const name: string = (<CustomEvent>event).detail.name;
+      const periodName: string = (<CustomEvent>event).detail.periodName;
+      const period = <Period>stat.timeframes[periodName];
+      currentValue.textContent = `${String(period.current)}${period.current > 1 ? "hrs" : "hr"}`;
+      previousValue.textContent = `${String(period.previous)}${period.previous > 1 ? "hrs" : "hr"}`;
+      previousPeriod.textContent = name;
+    });
     this.appendChild(element);
   }
 }
 
 customElements.define("app-dashboard", AppDashboard);
-
-/*
-const inputs = document.querySelectorAll(".menu__input") as NodeListOf<HTMLInputElement>;
-const grid = document.querySelector("#grid") as HTMLDivElement;
-const template = document.querySelector("#template") as HTMLTemplateElement;
-
-inputs.forEach((input) => {
-  input.addEventListener("change", (event) => {
-    const target = event.target as HTMLInputElement;
-    document.dispatchEvent(new CustomEvent("change-period", {detail: { period: target.value } }));
-  });
-});
-
-stats.forEach((stat) => {
-  const statFragment = template.content.cloneNode(true) as HTMLElement;
-  const section = statFragment.querySelector(".stat") as HTMLElement;
-  const title = statFragment.querySelector(".stat__title") as HTMLHeadingElement;
-  const currentValue = statFragment.querySelector(".stat__current-value") as HTMLSpanElement;
-  const previousValue = statFragment.querySelector(".stat__previous-value") as HTMLSpanElement;
-  const previousPeriod = statFragment.querySelector(".stat__previous-period") as HTMLSpanElement;
-  section.classList.add(`stat--${stat.name.replace(" ", "-")}`);
-  title.textContent = stat.name;
-  currentValue.textContent = `${String(stat.weekly.current)}${stat.weekly.current > 1 ? "hrs" : "hr"}`;
-  previousValue.textContent = `${String(stat.weekly.previous)}${stat.weekly.previous > 1 ? "hrs" : "hr"}`;
-  previousPeriod.textContent = stat.weekly.name;
-  document.addEventListener("change-period", (event) => {
-    const periodName: string = (<CustomEvent>event).detail.period;
-    const period = <Period>stat[periodName];
-    currentValue.textContent = `${String(period.current)}${period.current > 1 ? "hrs" : "hr"}`;
-    previousValue.textContent = `${String(period.previous)}${period.previous > 1 ? "hrs" : "hr"}`;
-    previousPeriod.textContent = period.name;
-  });
-  grid.appendChild(document.createComment(stat.name));
-  grid.appendChild(statFragment);
-});
-*/
