@@ -2,85 +2,81 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABO1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////l9Pff8fS54ein2eOn2eL9/v684unr9vj7/f7c8PSl2eKHzNil2OLv+Prz+vue1eB3xdOq2uPm9Pf29/vy8/n3/Py13+eEyteZ097P6u/2+/zByeKOm8r8/f7u+Pq+4+qOz9uU0dzo9fjb4O5meLbh5fH0+vvV7fHx+fv8/P2Gk8Wbps+44eim2eLW2+xkdrXO1Oit3OWttthperja3u7u+Pn6+/2hrNJneLfFy+P7+/23v92IlcbN0ufx8/nj5/Kbp9BsfbltfrqAj8ORnsvg5PD+/v/v8ffQ1em0vduqtNfn6vS/61TcAAAAHHRSTlMAAAQqbK3Z8v0DN5ff+xqJ6jbC/kHBAjjp3qz8qSKHsgAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiChMPAx5FOtlkAAABSUlEQVQ4y4WTZ2OCMBCGc4IMEXAPjB10771t7dLuXbv3/v+/oNigIYjN+4HcJU9CcgMhVxASxLAkK4oshUUhBIgVqBEtqmNXelSLqF4EwDBjmFHMNADoejyRxD4lE/EGAZCScICkFCGc/YHrDkHOACON2yhtOABkTNxWZgYQZHPeqWKH18tlAakas6ezi3E1FQl5Fuhm3LyARD0AsIs9vSSmIrJwC9DXPzA4NEx8C0ktwMjo2PiE3YgFkokxOdUEpmdm5+YXXEBGCjEWl5bpHVZKq2tlMq+gAjHWNza9r9jarpD5QuMX1Z3dv3Fvn72T3LzkweFRfSgd+xJGn3lyeuZ8K+csYNFAXVzWrqr+bDmBoqG+vqnd3t3bDOCE2push8en55fXNzZZTLrfPz6/vn+oX083t2C4JccvWm7Z8xuH33r85v2v/X8Bp/FiyVLnL/0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMTAtMTlUMTU6MDM6MzArMDI6MDCzEaEaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTEwLTE5VDE1OjAzOjMwKzAyOjAwwkwZpgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABO1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////l9Pff8fS54ein2eOn2eL9/v684unr9vj7/f7c8PSl2eKHzNil2OLv+Prz+vue1eB3xdOq2uPm9Pf29/vy8/n3/Py13+eEyteZ097P6u/2+/zByeKOm8r8/f7u+Pq+4+qOz9uU0dzo9fjb4O5meLbh5fH0+vvV7fHx+fv8/P2Gk8Wbps+44eim2eLW2+xkdrXO1Oit3OWttthperja3u7u+Pn6+/2hrNJneLfFy+P7+/23v92IlcbN0ufx8/nj5/Kbp9BsfbltfrqAj8ORnsvg5PD+/v/v8ffQ1em0vduqtNfn6vS/61TcAAAAHHRSTlMAAAQqbK3Z8v0DN5ff+xqJ6jbC/kHBAjjp3qz8qSKHsgAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiChMPAx5FOtlkAAABSUlEQVQ4y4WTZ2OCMBCGc4IMEXAPjB10771t7dLuXbv3/v+/oNigIYjN+4HcJU9CcgMhVxASxLAkK4oshUUhBIgVqBEtqmNXelSLqF4EwDBjmFHMNADoejyRxD4lE/EGAZCScICkFCGc/YHrDkHOACON2yhtOABkTNxWZgYQZHPeqWKH18tlAakas6ezi3E1FQl5Fuhm3LyARD0AsIs9vSSmIrJwC9DXPzA4NEx8C0ktwMjo2PiE3YgFkokxOdUEpmdm5+YXXEBGCjEWl5bpHVZKq2tlMq+gAjHWNza9r9jarpD5QuMX1Z3dv3Fvn72T3LzkweFRfSgd+xJGn3lyeuZ8K+csYNFAXVzWrqr+bDmBoqG+vqnd3t3bDOCE2push8en55fXNzZZTLrfPz6/vn+oX083t2C4JccvWm7Z8xuH33r85v2v/X8Bp/FiyVLnL/0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMTAtMTlUMTU6MDM6MzArMDI6MDCzEaEaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTEwLTE5VDE1OjAzOjMwKzAyOjAwwkwZpgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Primary Meta Tags -->
-    <title>Time tracking dashboard</title>
-    <meta name="title" content="Time tracking dashboard">
-    <meta name="description" content="Frontend Mentor challenge solution for: Time tracking dashboard">
+  <!-- Primary Meta Tags -->
+  <title>Time tracking dashboard</title>
+  <meta name="title" content="Time tracking dashboard">
+  <meta name="description" content="Frontend Mentor challenge solution for: Time tracking dashboard">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://john-mirage.github.io/time-tracking-dashboard/">
-    <meta property="og:title" content="Time tracking dashboard">
-    <meta property="og:description" content="Frontend Mentor challenge solution for: Time tracking dashboard">
-    <meta property="og:image" content="https://john-mirage.github.io/time-tracking-dashboard/preview.jpg">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://john-mirage.github.io/time-tracking-dashboard/">
+  <meta property="og:title" content="Time tracking dashboard">
+  <meta property="og:description" content="Frontend Mentor challenge solution for: Time tracking dashboard">
+  <meta property="og:image" content="https://john-mirage.github.io/time-tracking-dashboard/preview.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://john-mirage.github.io/time-tracking-dashboard/">
-    <meta property="twitter:title" content="Time tracking dashboard">
-    <meta property="twitter:description" content="Frontend Mentor challenge solution for: Time tracking dashboard">
-    <meta property="twitter:image" content="https://john-mirage.github.io/time-tracking-dashboard/preview.jpg">
-  <script type="module" crossorigin src="/time-tracking-dashboard/assets/index.c76eb9f4.js"></script>
-  <link rel="stylesheet" href="/time-tracking-dashboard/assets/index.89048eac.css">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://john-mirage.github.io/time-tracking-dashboard/">
+  <meta property="twitter:title" content="Time tracking dashboard">
+  <meta property="twitter:description" content="Frontend Mentor challenge solution for: Time tracking dashboard">
+  <meta property="twitter:image" content="https://john-mirage.github.io/time-tracking-dashboard/preview.jpg">
+  <script type="module" crossorigin src="/time-tracking-dashboard/assets/index.4c5ef2e6.js"></script>
+  <link rel="stylesheet" href="/time-tracking-dashboard/assets/index.184874d3.css">
 </head>
 
 <body class="page">
-    <main class="page__container">
-        <div class="page__grid" id="grid">
 
-            <header class="menu">
-                <div class="menu__user">
-                    <img class="menu__avatar" src="/time-tracking-dashboard/assets/image-jeremy.97a6932a.png" alt="avatar picture">
-                    <div class="menu__info">
-                        <p class="menu__report">Report for</p>
-                        <h1 class="menu__name">Jeremy Robson</h1>
-                    </div>
-                </div>
-                <div class="menu__period">
-                    <div class="menu__button">
-                        <input class="menu__input" type="radio" value="daily" name="period-selector" id="daily-selector" />
-                        <label class="menu__label" for="daily-selector">Daily</label>
-                    </div>
-                    <div class="menu__button">
-                        <input class="menu__input" type="radio" value="weekly" name="period-selector" id="weekly-selector" checked />
-                        <label class="menu__label" for="weekly-selector">Weekly</label>
-                    </div>
-                    <div class="menu__button">
-                        <input class="menu__input" type="radio" value="monthly" name="period-selector" id="monthly-selector" />
-                        <label class="menu__label" for="monthly-selector">Monthly</label>
-                    </div>
-                </div>
-            </header>
+  <!-- App -->
+  <main class="page__app">
+    <app-dashboard></app-dashboard>
+  </main>
 
-            <template id="template">
-                <section class="stat">
-                    <div class="stat__content">
-                        <div class="stat__row stat__row--top">
-                            <h2 class="stat__title"></h2>
-                            <button class="stat__button">
-                                <svg class="stat__icon" viewBox="0 0 21 5" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="stat__row stat__row--bottom">
-                            <p class="stat__current"><span class="stat__current-value"></span><span class="stat__current-time-unit"></span></p>
-                            <p class="stat__previous">Last <span class="stat__previous-period"></span> - <span class="stat__previous-value"></span></p>
-                        </div>
-                    </div>
-                </section>
-            </template>
-
+  <!-- Template | Menu -->
+  <template id="template-menu">
+    <header class="menu">
+      <div class="menu__user">
+        <img class="menu__avatar" src="/time-tracking-dashboard/assets/image-jeremy.97a6932a.png" alt="avatar picture">
+        <div class="menu__info">
+          <p class="menu__report">Report for</p>
+          <h1 class="menu__name">Jeremy Robson</h1>
         </div>
-    </main>
-    
+      </div>
+      <div class="menu__period">
+        <button class="menu__button" data-name="day" data-period="daily">Daily</button>
+        <button class="menu__button" data-name="week" data-period="weekly">Weekly</button>
+        <button class="menu__button" data-name="month" data-period="monthly">Monthly</button>
+      </div>
+    </header>
+  </template>
+
+  <!-- Template | Stat -->
+  <template id="template-stat">
+    <section class="stat">
+      <div class="stat__content">
+        <div class="stat__row stat__row--top">
+          <h2 class="stat__title"></h2>
+          <button class="stat__button">
+            <svg class="stat__icon" viewBox="0 0 21 5" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+        <div class="stat__row stat__row--bottom">
+          <p class="stat__current"><span class="stat__current-value"></span><span class="stat__current-time-unit"></span></p>
+          <p class="stat__previous">Last <span class="stat__previous-period"></span> - <span class="stat__previous-value"></span></p>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  
 </body>
 
 </html>
