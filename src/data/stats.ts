@@ -1,10 +1,11 @@
-interface Period {
+export interface Period {
   name: string;
   current: number;
   previous: number;
 }
 
 interface Stat {
+  [period: string]: string | Period;
   name: string;
   daily: Period;
   weekly: Period;
