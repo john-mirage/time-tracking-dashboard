@@ -1,4 +1,5 @@
 @import "styles/page.css";
+@import "styles/dashboard.css";
 @import "styles/menu.css";
 @import "styles/stat.css";
 
@@ -12,7 +13,7 @@
   --color-blue: hsl(246, 80%, 60%);
   --color-very-dark-blue: hsl(226, 43%, 10%);
   --color-dark-blue: hsl(235, 46%, 20%);
-  /* --color-desaturated-blue: hsl(235, 45%, 61%); */
+  --color-dark-blue-hover: hsl(235, 46%, 26%);
   --color-desaturated-blue: hsl(236, 41%, 34%);
   --color-pale-blue: hsl(236, 100%, 87%);
   --color-white: hsl(0, 0%, 100%);
