@@ -1,6 +1,59 @@
-import './main.css';
-import stats, {Period} from "@data/stats";
+import "./main.css";
+import stats from "@data/data.json";
 
+interface Period {
+  current: number;
+  previous: number;
+}
+
+interface Stat {
+  title: string;
+  timeframes: {
+    daily: Period;
+    weekly: Period;
+    monthly: Period;
+  }
+}
+
+class AppDashboard extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.classList.add("dashboard");
+    this.createMenu();
+    stats.forEach((stat: Stat) => this.createStat(stat));
+  }
+
+  createMenu() {
+    const template = <HTMLTemplateElement>document.getElementById("template-menu");
+    const fragment = <DocumentFragment>template.content.cloneNode(true);
+    const element = <HTMLElement>fragment.querySelector(".menu");
+    this.appendChild(element);
+  }
+
+  createStat(stat: Stat) {
+    const template = <HTMLTemplateElement>document.getElementById("template-stat");
+    const fragment = <DocumentFragment>template.content.cloneNode(true);
+    const element = <HTMLElement>fragment.querySelector(".stat");
+    const title = fragment.querySelector(".stat__title") as HTMLHeadingElement;
+    const currentValue = fragment.querySelector(".stat__current-value") as HTMLSpanElement;
+    const previousValue = fragment.querySelector(".stat__previous-value") as HTMLSpanElement;
+    const previousPeriod = fragment.querySelector(".stat__previous-period") as HTMLSpanElement;
+    const statName = stat.title.replace(" ", "-").toLowerCase();
+    element.classList.add(`stat--${statName}`);
+    title.textContent = stat.title;
+    currentValue.textContent = `${String(stat.timeframes.weekly.current)}${stat.timeframes.weekly.current > 1 ? "hrs" : "hr"}`;
+    previousValue.textContent = `${String(stat.timeframes.weekly.previous)}${stat.timeframes.weekly.previous > 1 ? "hrs" : "hr"}`;
+    previousPeriod.textContent = "week";
+    this.appendChild(element);
+  }
+}
+
+customElements.define("app-dashboard", AppDashboard);
+
+/*
 const inputs = document.querySelectorAll(".menu__input") as NodeListOf<HTMLInputElement>;
 const grid = document.querySelector("#grid") as HTMLDivElement;
 const template = document.querySelector("#template") as HTMLTemplateElement;
@@ -34,3 +87,4 @@ stats.forEach((stat) => {
   grid.appendChild(document.createComment(stat.name));
   grid.appendChild(statFragment);
 });
+*/
